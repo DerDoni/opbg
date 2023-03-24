@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ player1.name }} vs. {{ player2.name }}</h1>
+<h2>Player 1: {{ player1.health }} HP</h2>
+<h2>Player 2: {{ player2.health }} HP</h2>
+<h3>Turn {{ match.turn }} - {{ player1.name if match.turn % 2 == 1 else player2.name }}'s turn:</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ skill_form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

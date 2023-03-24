@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  opbg:
+    build: .
+    environment:
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    ports:
+      - "8000:8000"
